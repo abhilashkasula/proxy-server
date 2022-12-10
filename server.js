@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res) => {
-  axios({method: req.method, url: req.url, headers: req.header})
+  axios({method: req.method, url: req.url, headers: req.headers})
     .catch(err => {
       if (err.response) {
         return err.response;
