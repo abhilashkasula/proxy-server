@@ -1,6 +1,8 @@
 const {default: axios} = require('axios');
 const express = require('express');
 
+const PORT = process.env.PROXY_PORT || 8000;
+
 const app = express();
 
 app.use(express.json());
@@ -22,4 +24,4 @@ app.use((req, res) => {
     });
 });
 
-app.listen(8000);
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
